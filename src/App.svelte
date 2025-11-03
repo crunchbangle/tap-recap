@@ -7,7 +7,7 @@
   import Buttons from './lib/Buttons.svelte';
 </script>
 
-<main>
+<main class="container">
 <Buttons />
 
 </main>

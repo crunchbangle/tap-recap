@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Card, Button } from "flowbite-svelte"
+import { P, Card, Button } from "flowbite-svelte"
 import {  CaretRightOutline, CaretLeftOutline, CalendarWeekOutline } from "flowbite-svelte-icons"
 import {taps} from './storage'
 
@@ -9,6 +9,8 @@ import {taps} from './storage'
 
 <p>I want to have it so you can navigate days, better formatting, 
     and maybe some checked state for whether the user has reflected on it yet?</p>
+
+<P>actually, no, I want the calendar on a different page... this part is just items that aren't marked as reviewed</P>
 
 <p>also need to sort out formatting!!!!</p>
 

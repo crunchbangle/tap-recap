@@ -1,38 +1,55 @@
 <script lang="ts">
 
 import { BottomNav, BottomNavItem } from "flowbite-svelte";
-import { TableRowSolid, CogSolid,  CirclePlusSolid  } from "flowbite-svelte-icons";
+import { TableRowOutline, CogOutline, CirclePlusOutline, ChartOutline, CalendarMonthOutline } from "flowbite-svelte-icons";
 import Tap from "./Tap.svelte";
 import Recap from "./Recap.svelte";
 import Settings from "./Settings.svelte";
+import Chart from "./Chart.svelte";
+import Days from "./Days.svelte";
 
 let selectedTab = $state("tap");
 
 </script>
 
-{#if selectedTab=="tap"}
+{#if selectedTab==="tap"}
 <Tap/>
 {/if}
 
-{#if selectedTab=="recap"}
+{#if selectedTab==="recap"}
 <Recap/>
 {/if}
 
-{#if selectedTab=="settings"}
+{#if selectedTab==="days"}
+<Days/>
+{/if}
+
+{#if selectedTab==="chart"}
+<Chart/>
+{/if}
+
+{#if selectedTab==="settings"}
 <Settings/>
 {/if}
 
 
-<BottomNav position="absolute" classes={{ inner: "grid-cols-4" }}>
+<BottomNav position="absolute" classes={{"inner": "grid-cols-5 grid gap-4 mb-6"}}>
   <BottomNavItem btnName="Tap" onclick={()=>selectedTab="tap"}>
-    <CirclePlusSolid class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+    <CirclePlusOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
   </BottomNavItem>
   <BottomNavItem btnName="Recap" onclick={()=>selectedTab="recap"}>
-    <TableRowSolid class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+    <TableRowOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+  </BottomNavItem>
+  <BottomNavItem btnName="Days" onclick={()=>selectedTab="days"}>
+    <CalendarMonthOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+  </BottomNavItem>
+  <BottomNavItem btnName="Chart" onclick={()=>selectedTab="chart"}>
+    <ChartOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
   </BottomNavItem>
   <BottomNavItem btnName="Settings" onclick={()=>selectedTab="settings"}>
-    <CogSolid class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
+    <CogOutline class="group-hover:text-primary-600 dark:group-hover:text-primary-500 mb-1 h-6 w-6 text-gray-500 dark:text-gray-400" />
   </BottomNavItem>
 </BottomNav>
 
+ 
 
