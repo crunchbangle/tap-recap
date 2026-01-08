@@ -7,7 +7,7 @@
   import Buttons from './lib/Buttons.svelte';
 </script>
 
-<main class="container">
+<main class="w-full h-screen" style="border:solid 2px red;">
 <Buttons />
 
 </main>
