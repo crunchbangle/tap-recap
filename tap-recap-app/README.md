@@ -1,6 +1,8 @@
-# sv
+# Tap-Recap
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Rapid emotion tracking and journaling PWA.
+
+**Live app:** https://crunchbangle.github.io/tap-recap/
 
 ## Creating a project
 
