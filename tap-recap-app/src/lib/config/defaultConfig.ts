@@ -17,8 +17,8 @@ export const defaultConfig: Omit<AppConfig, 'version' | 'timestamp'> = {
 		{ tag: 'other', displayText: 'A colleague' },
 		{ tag: 'other', displayText: 'An acquintance' },
 		{ tag: 'other', displayText: 'A stranger' },
-		{ tag: 'other', displayText: 'Some media' },
-		{ tag: 'other', displayText: 'A memory' }
+		{ tag: 'mademe', displayText: 'Some media' },
+		{ tag: 'mademe', displayText: 'A memory' }
 	],
 	actions: [
 		// Actions with "felt" and "good" tags
@@ -72,12 +72,12 @@ export const defaultConfig: Omit<AppConfig, 'version' | 'timestamp'> = {
 
 		// Actions with "other" and "good" tags
 		{ tags: ['other', 'good'], displayText: 'Complimented me' },
-		{ tags: ['other', 'good'], displayText: 'Made me smile' },
+		{ tags: ['other', 'mademe', 'good'], displayText: 'Made me smile' },
 		{ tags: ['other', 'good'], displayText: 'Affirmed me' },
 
 		// Actions with "other" and "bad" tags
-		{ tags: ['other', 'bad'], displayText: 'Made me furious' },
-		{ tags: ['other', 'bad'], displayText: 'Made me cry' },
+		{ tags: ['other', 'mademe', 'bad'], displayText: 'Made me furious' },
+		{ tags: ['other', 'mademe', 'bad'], displayText: 'Made me cry' },
 		{ tags: ['other', 'bad'], displayText: 'Laughed at me' },
 		{ tags: ['other', 'bad'], displayText: 'Ignored me' },
 
