@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 </script>
 
 <div class="container mx-auto max-w-4xl px-4 pt-20">
@@ -6,7 +7,7 @@
 
 	<div class="grid gap-4 md:grid-cols-2">
 		<a
-			href="/settings/moods"
+			href="{base}/settings/moods"
 			class="block cursor-pointer rounded-lg bg-white p-6 shadow transition-shadow hover:shadow-lg"
 		>
 			<h3 class="mb-2 text-xl font-semibold">Moods</h3>
@@ -14,7 +15,7 @@
 		</a>
 
 		<a
-			href="/settings/actors"
+			href="{base}/settings/actors"
 			class="block cursor-pointer rounded-lg bg-white p-6 shadow transition-shadow hover:shadow-lg"
 		>
 			<h3 class="mb-2 text-xl font-semibold">Actors</h3>
@@ -22,7 +23,7 @@
 		</a>
 
 		<a
-			href="/settings/actions"
+			href="{base}/settings/actions"
 			class="block cursor-pointer rounded-lg bg-white p-6 shadow transition-shadow hover:shadow-lg"
 		>
 			<h3 class="mb-2 text-xl font-semibold">Actions</h3>
@@ -30,7 +31,7 @@
 		</a>
 
 		<a
-			href="/settings/preferences"
+			href="{base}/settings/preferences"
 			class="block cursor-pointer rounded-lg bg-white p-6 shadow transition-shadow hover:shadow-lg"
 		>
 			<h3 class="mb-2 text-xl font-semibold">Preferences</h3>
@@ -38,7 +39,7 @@
 		</a>
 
 		<a
-			href="/settings/export"
+			href="{base}/settings/export"
 			class="block cursor-pointer rounded-lg bg-white p-6 shadow transition-shadow hover:shadow-lg"
 		>
 			<h3 class="mb-2 text-xl font-semibold">Export Data</h3>
@@ -46,7 +47,7 @@
 		</a>
 
 		<a
-			href="/settings/import"
+			href="{base}/settings/import"
 			class="block cursor-pointer rounded-lg bg-white p-6 shadow transition-shadow hover:shadow-lg"
 		>
 			<h3 class="mb-2 text-xl font-semibold">Import Data</h3>

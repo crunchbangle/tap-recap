@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { base } from '$app/paths';
 
 	let menuOpen = $state(false);
 
@@ -8,13 +9,13 @@
 	}
 
 	function isActive(path: string): boolean {
-		return $page.url.pathname === path;
+		return $page.url.pathname === base + path;
 	}
 </script>
 
 <nav class="fixed top-8 z-50 w-full border-b border-gray-200 bg-white">
 	<div class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-4 py-2.5">
-		<a href="/" class="flex items-center">
+		<a href="{base}/" class="flex items-center">
 			<span class="self-center whitespace-nowrap text-xl font-semibold">Tap-Recap</span>
 		</a>
 
@@ -41,7 +42,7 @@
 			>
 				<li>
 					<a
-						href="/"
+						href="{base}/"
 						class="block rounded px-3 py-2 {isActive('/')
 							? 'bg-blue-700 text-white md:bg-transparent md:text-blue-700'
 							: 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'}"
@@ -51,7 +52,7 @@
 				</li>
 				<li>
 					<a
-						href="/recap"
+						href="{base}/recap"
 						class="block rounded px-3 py-2 {isActive('/recap')
 							? 'bg-blue-700 text-white md:bg-transparent md:text-blue-700'
 							: 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'}"
@@ -61,7 +62,7 @@
 				</li>
 				<li>
 					<a
-						href="/calendar"
+						href="{base}/calendar"
 						class="block rounded px-3 py-2 {isActive('/calendar')
 							? 'bg-blue-700 text-white md:bg-transparent md:text-blue-700'
 							: 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'}"
@@ -71,7 +72,7 @@
 				</li>
 				<li>
 					<a
-						href="/chart"
+						href="{base}/chart"
 						class="block rounded px-3 py-2 {isActive('/chart')
 							? 'bg-blue-700 text-white md:bg-transparent md:text-blue-700'
 							: 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'}"
@@ -81,7 +82,7 @@
 				</li>
 				<li>
 					<a
-						href="/settings"
+						href="{base}/settings"
 						class="block rounded px-3 py-2 {isActive('/settings')
 							? 'bg-blue-700 text-white md:bg-transparent md:text-blue-700'
 							: 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700'}"

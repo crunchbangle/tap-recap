@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { dataService } from '$lib/services/browserStorageService';
 	import type { Emote, AppConfig, Mood } from '$lib/types';
 
@@ -111,7 +112,7 @@
 
 		// Store the date range in sessionStorage for the recap page
 		sessionStorage.setItem('dateFilter', JSON.stringify({ startDate, endDate }));
-		goto('/recap');
+		goto(`${base}/recap`);
 	}
 
 	function viewSelectedChart() {
@@ -121,7 +122,7 @@
 		const endDate = new Date(Math.max(...selectedDates.map((d) => d.getTime())));
 
 		sessionStorage.setItem('dateFilter', JSON.stringify({ startDate, endDate }));
-		goto('/chart');
+		goto(`${base}/chart`);
 	}
 
 	const monthYear = $derived(

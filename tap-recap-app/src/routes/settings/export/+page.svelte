@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { dataService } from '$lib/services/browserStorageService';
 	import type { ExportFormat } from '$lib/types';
 
@@ -42,7 +43,7 @@
 <div class="container mx-auto max-w-4xl px-4 pt-20">
 	<div class="mb-4">
 		<a
-			href="/settings"
+			href="{base}/settings"
 			class="inline-block rounded-lg bg-gray-100 px-3 py-1.5 text-sm font-medium text-gray-900 hover:bg-gray-200"
 		>
 			&larr; Back to Settings
