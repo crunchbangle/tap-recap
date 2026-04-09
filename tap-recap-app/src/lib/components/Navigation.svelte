@@ -12,7 +12,7 @@
 	}
 </script>
 
-<nav class="fixed top-0 z-50 w-full border-b border-gray-200 bg-white">
+<nav class="fixed top-8 z-50 w-full border-b border-gray-200 bg-white">
 	<div class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-4 py-2.5">
 		<a href="/" class="flex items-center">
 			<span class="self-center whitespace-nowrap text-xl font-semibold">Tap-Recap</span>
