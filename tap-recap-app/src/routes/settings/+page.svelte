@@ -60,13 +60,21 @@
 		<p class="mb-2 text-gray-600">
 			Tap-Recap is an open-source emotion tracking app for rapid journaling.
 		</p>
-		<a
-			href="https://github.com/yourusername/tap-recap"
-			target="_blank"
-			rel="noopener noreferrer"
-			class="text-blue-600 hover:underline"
-		>
-			View on GitHub
-		</a>
+		<div class="flex gap-4">
+			<a
+				href="{base}/guide"
+				class="text-blue-600 hover:underline"
+			>
+				How to use this app
+			</a>
+			<a
+				href="https://github.com/crunchbangle/tap-recap"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="text-blue-600 hover:underline"
+			>
+				View on GitHub
+			</a>
+		</div>
 	</div>
 </div>
