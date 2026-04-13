@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { goto } from '$app/navigation';
+	import { page } from '$app/state';
 	import { base } from '$app/paths';
 	import { dataService } from '$lib/services/browserStorageService';
 	import type { Action, AppConfig } from '$lib/types';
@@ -13,6 +15,14 @@
 
 	onMount(async () => {
 		config = await dataService.getCurrentConfig();
+		const prefill = page.url.searchParams.get('tags');
+		if (prefill) {
+			editingAction = { tags: [], displayText: '' };
+			originalAction = null;
+			tagsInput = prefill;
+			isNew = true;
+			showModal = true;
+		}
 	});
 
 	function addNew() {
@@ -53,6 +63,21 @@
 		}
 
 		await dataService.saveConfig(config);
+
+		const mood = page.url.searchParams.get('mood');
+		const actor = page.url.searchParams.get('actor');
+		if (isNew && mood && actor) {
+			await dataService.logEmote({
+				timestamp: new Date(),
+				mood,
+				actor,
+				action: editingAction.displayText,
+				reviewed: false
+			});
+			goto(`${base}/?logged=${encodeURIComponent(`${mood} ${actor} ${editingAction.displayText}`)}`);
+			return;
+		}
+
 		config = await dataService.getCurrentConfig();
 		showModal = false;
 	}

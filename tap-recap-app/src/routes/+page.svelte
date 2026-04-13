@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { base } from '$app/paths';
 	import { dataService } from '$lib/services/browserStorageService';
 	import { filterActions } from '$lib/utils/filterActions';
 	import type { Mood, Actor, Action, AppConfig } from '$lib/types';
@@ -15,6 +16,13 @@
 
 	onMount(async () => {
 		config = await dataService.getCurrentConfig();
+		const logged = new URLSearchParams(window.location.search).get('logged');
+		if (logged) {
+			toastMessage = `Logged: ${logged}`;
+			showToast = true;
+			setTimeout(() => { showToast = false; }, 3000);
+			history.replaceState({}, '', window.location.pathname);
+		}
 	});
 
 	function selectMood(mood: Mood) {
@@ -142,6 +150,14 @@
 							{action.displayText}
 						</button>
 					{/each}
+					{#if selectedMood && selectedActor}
+						<a
+							href="{base}/settings/actions?tags={encodeURIComponent(selectedActor.tag + ', ' + selectedMood.tag)}&mood={encodeURIComponent(selectedMood.displayText)}&actor={encodeURIComponent(selectedActor.displayText)}"
+							class="rounded-lg bg-blue-100 px-3 py-1.5 text-sm font-medium text-blue-700 transition-colors hover:bg-blue-200"
+						>
+							+
+						</a>
+					{/if}
 				</div>
 			{:else if selectedMood || selectedActor}
 				<p class="text-sm text-gray-500">Select both a mood and an actor to see actions</p>
